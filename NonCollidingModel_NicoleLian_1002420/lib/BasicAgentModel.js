@@ -73,6 +73,8 @@ const TABLE4 = 0;
 const TABLE5 = 0;
 const TABLE6 = 0;
 
+//setting up the restaurant tables
+
 var tablesIN = [
   {"type":TABLE1,"label":"Table1","location":{"row":tableRow_1,"col":tableCol_2},"state":IDLE},
 	{"type":TABLE2,"label":"Table2","location":{"row":tableRow_2,"col":tableCol_2},"state":IDLE},
@@ -82,14 +84,10 @@ var tablesIN = [
   {"type":TABLE6,"label":"Table6","location":{"row":tableRow_6,"col":tableCol_6},"state":IDLE},
 ];
 
+var Table1 = tablesIN[1]
+
 // patients is a dynamic list, initially empty
 var patients = [];
-
-//setting up the restaurant
-var tables = {
-{"type":DOCTOR,"label":"Doctor","location":{"row":doctorRow,"col":doctorCol},"state":IDLE},
-{"type":RECEPTIONIST,"label":"Receptionist","location":{"row":receptionistRow,"col":receptionistCol},"state":IDLE}
-}
 
 // caregivers is a static list, populated with a receptionist and a doctor
 var caregivers = [
@@ -303,7 +301,7 @@ function updateSurface(){
  	 .attr("y",function(d){var cell= getLocationCell(d.location); return cell.y+"px";})
  	 .attr("width", Math.min(cellWidth,cellHeight)+"px")
  	 .attr("height", Math.min(cellWidth,cellHeight)+"px")
- 	 .attr("xlink:href",function(d){if (d.type==TABLE1) return table; else return table;});
+ 	 .attr("xlink:href",function(d){d.type==TABLE1 return table; else return drinksdispenser;});
 //////////////////////////////////////////////////////
 
 
